@@ -146,7 +146,7 @@ the Biocreative V CDR corpus
  
  Citing & Authors
  ---
-Miftahutdinov Z., Kadurin A., Kudrin R., Tutubalina E. Medical concept normalization in social media posts with recurrent neural networks //Advances in  Information Retrieval. – 2021. – С. 451-466. [paper](https://link.springer.com/chapter/10.1007/978-3-030-72113-8_30), [preprint](https://arxiv.org/pdf/2101.09311.pdf)
+Miftahutdinov Z., Kadurin A., Kudrin R., Tutubalina E. Drug and Disease Interpretation Learning with Biomedical Entity Representation Transformer //Advances in  Information Retrieval. – 2021. – С. 451-466. [paper](https://link.springer.com/chapter/10.1007/978-3-030-72113-8_30), [preprint](https://arxiv.org/pdf/2101.09311.pdf)
 
 Bibtex
 ```
