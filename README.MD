@@ -1,6 +1,6 @@
 Medical Concept Normalization in Clinical Trials with Drug and Disease Representation Learning
 ---
-This repository contains additional materials of our paper ["Medical Concept Normalization in Clinical Trials with Drug and Disease Representation Learning"](https://arxiv.org/pdf/2101.09311.pdf). 
+This repository contains additional materials of our papers ["Medical Concept Normalization in Clinical Trials with Drug and Disease Representation Learning"](https://academic.oup.com/bioinformatics/advance-article/doi/10.1093/bioinformatics/btab474/6313159?login=true) (_Bioinformatics_) and ["Medical Concept Normalization in Clinical Trials with Drug and Disease Representation Learning"](https://link.springer.com/chapter/10.1007/978-3-030-72113-8_30) (_ECIR 2021_). 
 We investigate the effectiveness of transferring concept normalization from the general biomedical domain to the 
 clinical trials domain in a zero-shot setting with an absence of labeled data. We propose a simple and effective 
 two-stage neural approach based on fine-tuned BERT architectures. In the first stage, we train a metric learning model 
@@ -89,7 +89,7 @@ filtered test set of clinical trials (CT)
 
 Table 2
 In-domain performance of the proposed DILBERT model interms of Acc@1 on the refined test set of 
-the Biocreative V CDR corpus
+the Biocreative V CDR corpus. For more details about the refined CDR corpus, please see our paper ["Fair evaluation in concept normalization: a large-scale comparative analysis for BERT-based models"](https://www.aclweb.org/anthology/2020.coling-main.588.pdf)
 
 <table>
 <thead>
@@ -146,21 +146,42 @@ the Biocreative V CDR corpus
  
  Citing & Authors
  ---
-Miftahutdinov Z., Kadurin A., Kudrin R., Tutubalina E. Drug and Disease Interpretation Learning with Biomedical Entity Representation Transformer //Advances in  Information Retrieval. – 2021. – С. 451-466. [paper](https://link.springer.com/chapter/10.1007/978-3-030-72113-8_30), [preprint](https://arxiv.org/pdf/2101.09311.pdf)
+Miftahutdinov Z., Kadurin A., Kudrin R., Tutubalina E. Medical Concept Normalization in Clinical Trials with Drug and Disease Representation Learning //Bioinformatics. – 2021. [paper](https://academic.oup.com/bioinformatics/advance-article/doi/10.1093/bioinformatics/btab474)
+```
+ @article{10.1093/bioinformatics/btab474,
+    author = {Miftahutdinov, Zulfat and Kadurin, Artur and Kudrin, Roman and Tutubalina, Elena},
+    title = "{Medical Concept Normalization in Clinical Trials with Drug and Disease Representation Learning}",
+    journal = {Bioinformatics},
+    year = {2021},
+    month = {07},
+    issn = {1367-4803},
+    doi = {10.1093/bioinformatics/btab474},
+    url = {https://doi.org/10.1093/bioinformatics/btab474},
+    note = {btab474},
+    eprint = {https://academic.oup.com/bioinformatics/advance-article-pdf/doi/10.1093/bioinformatics/btab474/38853026/btab474.pdf},
+}
+```
 
-Bibtex
+Miftahutdinov Z., Kadurin A., Kudrin R., Tutubalina E. Drug and Disease Interpretation Learning with Biomedical Entity Representation Transformer //Advances in  Information Retrieval. – 2021. – pp. 451-466. [paper](https://link.springer.com/chapter/10.1007/978-3-030-72113-8_30), [preprint](https://arxiv.org/pdf/2101.09311.pdf)
 ```
 @InProceedings{10.1007/978-3-030-72113-8_30,
-author="Miftahutdinov, Zulfat
-and Kadurin, Artur
-and Kudrin, Roman
-and Tutubalina, Elena",
-title="Drug and Disease Interpretation Learning with Biomedical Entity Representation Transformer",
-booktitle="Advances in  Information Retrieval",
-year="2021",
-publisher="Springer International Publishing",
-address="Cham",
-pages="451--466",
-isbn="978-3-030-72113-8"
+ author="Miftahutdinov, Zulfat and Kadurin, Artur and Kudrin, Roman and Tutubalina, Elena",
+ title="Drug and Disease Interpretation Learning with Biomedical Entity Representation Transformer",
+ booktitle="Advances in  Information Retrieval",
+ year="2021",
+ publisher="Springer International Publishing",
+ address="Cham",
+ pages="451--466",
+ isbn="978-3-030-72113-8"
+}
+```
+Tutubalina E., Kadurin A., Miftahutdinov Z. Fair evaluation in concept normalization: a large-scale comparative analysis for BERT-based models //Proceedings of the 28th International Conference on Computational Linguistics. – 2020. – pp. 6710-6716. [paper](https://www.aclweb.org/anthology/2020.coling-main.588.pdf), [git](https://github.com/insilicomedicine/Fair-Evaluation-BERT)
+```
+@inproceedings{tutubalina2020fair,
+  title={Fair evaluation in concept normalization: a large-scale comparative analysis for BERT-based models},
+  author={Tutubalina, Elena and Kadurin, Artur and Miftahutdinov, Zulfat},
+  booktitle={Proceedings of the 28th International Conference on Computational Linguistics},
+  pages={6710--6716},
+  year={2020}
 }
 ```
