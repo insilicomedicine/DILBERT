@@ -1,6 +1,6 @@
 Medical Concept Normalization in Clinical Trials with Drug and Disease Representation Learning
 ---
-This repository contains additional materials of our papers ["Medical Concept Normalization in Clinical Trials with Drug and Disease Representation Learning"](https://academic.oup.com/bioinformatics/advance-article/doi/10.1093/bioinformatics/btab474/6313159?login=true) (_Bioinformatics_) and ["Medical Concept Normalization in Clinical Trials with Drug and Disease Representation Learning"](https://link.springer.com/chapter/10.1007/978-3-030-72113-8_30) (_ECIR 2021_). 
+This repository contains additional materials of our papers ["Medical Concept Normalization in Clinical Trials with Drug and Disease Representation Learning"](https://academic.oup.com/bioinformatics/advance-article/doi/10.1093/bioinformatics/btab474/6313159?login=true) (_Bioinformatics_) and ["Drug and Disease Interpretation Learning with Biomedical Entity Representation Transformer"](https://link.springer.com/chapter/10.1007/978-3-030-72113-8_30) (_ECIR 2021_). 
 We investigate the effectiveness of transferring concept normalization from the general biomedical domain to the 
 clinical trials domain in a zero-shot setting with an absence of labeled data. We propose a simple and effective 
 two-stage neural approach based on fine-tuned BERT architectures. In the first stage, we train a metric learning model 
