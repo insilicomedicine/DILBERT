@@ -143,6 +143,63 @@ the Biocreative V CDR corpus
  CDR corpus using reduced dictionaries.
  ![](images/cdr_combined.png)
  
+ ## Requirements
+```bash
+$ pip install -r requirements.txt
+```
+
+## Resources
+
+### Pretrained Model
+We use the [Huggingface](https://github.com/huggingface/transformers) version of [BioBERT v1.1](https://github.com/dmis-lab/biobert) so that the pretrained model can be run on the pytorch framework.
+
+- [biobert v1.1 (pytorch)](https://drive.google.com/drive/folders/1nSjj-ubecQbwYPdz3NyAqiJ1-rLtguUp?usp=sharing)
+
+ ### Datasets
+
+We made available all [datasets](https://yadi.sk/d/lQ8bAhFMnjSvTA)
+
+
+### Run
+
+To run the full training and evaluation procedure use run.sh script.
+
+```bash
+$ ./run.sh
+```
+
+## Generating triplets
+
+```bash
+$ python data_utils/convert_to_triplet_dataset.py --input_data path/to/labeled/files \
+                                     --vocab path/to/vocabulary \
+                                     --save_to path/to/save/triplets/file \
+                                     --path_to_bert_model path/to/bert/model \
+                                     --hard \
+                                     --hierarchy path/to/hierarchy/file \
+                                     --hierarchy_aware
+```
+
+## Train
+```bash
+$ python train_sentence_bert.py --path_to_bert_model path/to/bert/model \
+                                --data_folder path/to/folder/containing/triplet/file  \
+                                --triplets_file triplet_file_name \
+                                --output_dir path/to/save/model
+```
+
+## Evaluation
+ 
+To eval the model run the command:
+
+```bash
+$ python eval_bert_ranking.py --model_dir path/to/bert/model \
+                         --data_folder path/to/labeled/files \
+                         --vocab path/to/vocabulary
+
+```
+
+ 
  
  Citing & Authors
  ---

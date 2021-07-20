@@ -6,7 +6,7 @@ OUTPUT_DIR=/tmp/test_run
 PYTHONPATH=$(dirname $(pwd))
 
 
-PREPARE_TRIPLETS=false
+PREPARE_TRIPLETS=true
 TRAIN_MODEL=true
 EVAL_MODEL=true
 
