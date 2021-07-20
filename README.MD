@@ -203,22 +203,6 @@ $ python eval_bert_ranking.py --model_dir path/to/bert/model \
  
  Citing & Authors
  ---
-Miftahutdinov Z., Kadurin A., Kudrin R., Tutubalina E. Medical Concept Normalization in Clinical Trials with Drug and Disease Representation Learning //Bioinformatics. – 2021. [paper](https://academic.oup.com/bioinformatics/advance-article/doi/10.1093/bioinformatics/btab474)
-```
- @article{10.1093/bioinformatics/btab474,
-    author = {Miftahutdinov, Zulfat and Kadurin, Artur and Kudrin, Roman and Tutubalina, Elena},
-    title = "{Medical Concept Normalization in Clinical Trials with Drug and Disease Representation Learning}",
-    journal = {Bioinformatics},
-    year = {2021},
-    month = {07},
-    issn = {1367-4803},
-    doi = {10.1093/bioinformatics/btab474},
-    url = {https://doi.org/10.1093/bioinformatics/btab474},
-    note = {btab474},
-    eprint = {https://academic.oup.com/bioinformatics/advance-article-pdf/doi/10.1093/bioinformatics/btab474/38853026/btab474.pdf},
-}
-```
-
 Miftahutdinov Z., Kadurin A., Kudrin R., Tutubalina E. Drug and Disease Interpretation Learning with Biomedical Entity Representation Transformer //Advances in  Information Retrieval. – 2021. – pp. 451-466. [paper](https://link.springer.com/chapter/10.1007/978-3-030-72113-8_30), [preprint](https://arxiv.org/pdf/2101.09311.pdf)
 ```
 @InProceedings{10.1007/978-3-030-72113-8_30,
