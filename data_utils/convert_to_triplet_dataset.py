@@ -1,9 +1,9 @@
-from DILBERT.models.bert_ranker import RankingMapper
-from DILBERT.models.random_sampler import RandomSampler
+from models.bert_ranker import RankingMapper
+from models.random_sampler import RandomSampler
 from argparse import ArgumentParser
 import pandas as pd
 from tqdm import tqdm
-from DILBERT.hierarchy import MeSHGraph
+from hierarchy import MeSHGraph, UMLS_hierarchy
 import os
 from glob import glob
 
@@ -99,13 +99,15 @@ if __name__ == '__main__':
     parser.add_argument('--path_to_bert_model')
     parser.add_argument('--hard', action='store_true')
     parser.add_argument('--hierarchy_aware', action='store_true')
+    parser.add_argument('--UMLS', action='store_true')
     args = parser.parse_args()
 
     data = read(args.input_data)
     hierarchy = None
-    if args.hierarchy_aware:
+    if args.hierarchy_aware and args.UMLS:
+        hierarchy = UMLS_hierarchy(args.hierarchy)
+    elif args.hierarchy_aware:
         hierarchy = MeSHGraph(args.hierarchy)
-
     if args.hard:
         model = RankingMapper(model_path=args.path_to_bert_model, vocab_path=args.vocab)
         model.search_count = 1024

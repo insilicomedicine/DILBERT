@@ -5,13 +5,13 @@ from tqdm import tqdm
 
 class MeSHGraph:
     def __init__(self, mesh_path: str) -> None:
-        mesh = pd.read_csv(mesh_path)
-        mesh['parsedTNL'] = mesh['TreeNumberList'].str.replace(r'\[|\]', '').str.split(r', ?')
-        mesh = mesh.explode('parsedTNL')
-        mesh = mesh[mesh.parsedTNL.apply(len) != 0]
-        mesh = mesh.sort_values('parsedTNL')
+        self.mesh = pd.read_csv(mesh_path)
+        self.mesh['parsedTNL'] = self.mesh['TreeNumberList'].str.replace(r'\[|\]', '').str.split(r', ?')
+        self.mesh = self.mesh.explode('parsedTNL')
+        self.mesh = self.mesh[self.mesh.parsedTNL.apply(len) != 0]
+        self.mesh = self.mesh.sort_values('parsedTNL')
         self.tree = {}
-        self.create_tree(mesh)
+        self.create_tree(self.mesh)
 
     def create_tree(self, mesh: pd.DataFrame) -> Dict[str, Dict[str, str]]:
         for row_idx, mesh_entry in tqdm(enumerate(mesh.itertuples(index=False)), total=mesh.shape[0]):
