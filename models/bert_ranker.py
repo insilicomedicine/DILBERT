@@ -1,8 +1,9 @@
 import numpy as np
 import faiss
+import torch
 import os
 import logging
-from DILBERT.preprocess import preprocess, combine_candidates, split_entity
+from preprocess import preprocess, combine_candidates, split_entity
 from sentence_transformers import models, SentenceTransformer
 from sentence_transformers import SentencesDataset
 from sentence_transformers.evaluation import SentenceEvaluator, TripletEvaluator
@@ -12,6 +13,7 @@ from sklearn.model_selection import train_test_split
 
 from sentence_transformers.readers import TripletReader
 from typing import List, Tuple, Any, Optional, Dict
+from tqdm import tqdm
 
 logging.basicConfig(format='%(name)s - %(levelname)s - %(message)s')
 
@@ -56,7 +58,7 @@ class RankingMapper:
     def load_model(path: str) -> SentenceTransformer:
         checkpoint_files = os.listdir(path)
         if 'pytorch_model.bin' in checkpoint_files:
-            word_embedding_model = models.BERT(path)
+            word_embedding_model = models.Transformer(path)
             pooling_model = models.Pooling(word_embedding_model.get_word_embedding_dimension(),
                                            pooling_mode_mean_tokens=True,
                                            pooling_mode_cls_token=False,
@@ -67,6 +69,7 @@ class RankingMapper:
     def encode(self, texts: List[str]) -> np.array:
         batch_size = 4096
         embeddings = []
+        print(texts)
         for batch_start in range(0, len(texts), batch_size):
             batch_end = min(len(texts), batch_start + batch_size)
             batch_embeddings = self.model.encode(texts[batch_start:batch_end], show_progress_bar=False, batch_size=512)
@@ -118,7 +121,7 @@ class RankingMapper:
             entity['label'] = candidate_list
         if pp:
             entities_pp = combine_candidates(entities_pp)
-        for entity in entities_pp:
+        for entity in tqdm(entities_pp):
             distances = entity['label'][1]
             concept_ids = entity['label'][0]
             pred_labels = []
@@ -139,7 +142,7 @@ class RankingMapper:
 
         train_loss = TripletLoss(model=self.model)
         warmup_steps = int(len(train_triplets) / batch_size * epochs * 0.1)
-
+        torch.multiprocessing.set_start_method('spawn')
         self.model.fit(train_objectives=[(train_dataloader, train_loss)],
                        evaluator=TripletEvaluator.from_input_examples(test_triplets),
                        epochs=epochs,
