@@ -1,9 +1,6 @@
-torch==1.4.0+cu100
+torch==1.4.0
 tqdm==4.46.0
 numpy==1.18.1
 pandas==1.0.1
-sentence_transformers.egg==info
 faiss_gpu==1.6.3
-faiss==1.5.3
-sentence_transformers==1.0.4
-
+sentence-transformers==0.3.7.2
